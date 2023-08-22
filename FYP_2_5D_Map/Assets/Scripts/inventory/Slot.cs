@@ -13,6 +13,7 @@ public class Slot : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IPoin
         {
             GameObject itemGameObject = Instantiate(itemPrefab) as GameObject;
             itemGameObject.transform.SetParent(this.transform);
+            itemGameObject.transform.localScale = Vector3.one;
             itemGameObject.transform.localPosition = Vector3.zero;
             itemGameObject.GetComponent<ItemUI>().SetItem(item);
         }
@@ -81,6 +82,68 @@ public class Slot : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IPoin
                     InventoryManager.Instance.SelectedItemUI(currentItem.Item,currentItem.Amount);
                     Destroy(currentItem.gameObject);
                 }
+            }
+            else
+            {
+                if (currentItem.Item.ID==InventoryManager.Instance.SelectedItem.Item.ID)
+                {
+                    if (Input.GetKey(KeyCode.LeftControl))
+                    {
+                        if (currentItem.Item.Capacity>currentItem.Amount)
+                        {
+                            currentItem.AddAmount();
+                            InventoryManager.Instance.RemoveItem();
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (currentItem.Item.Capacity>currentItem.Amount)
+                        {
+                            int amountRemain = currentItem.Item.Capacity = currentItem.Amount;
+                            if (amountRemain>=InventoryManager.Instance.SelectedItem.Amount)
+                            {
+                                currentItem.SetAmount(currentItem.Amount+InventoryManager.Instance.SelectedItem.Amount);
+                                InventoryManager.Instance.RemoveItem(InventoryManager.Instance.SelectedItem.Amount);
+                            }
+                            else
+                            {
+                                currentItem.SetAmount(currentItem.Amount+amountRemain);
+                                InventoryManager.Instance.RemoveItem(amountRemain);
+                            }
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (InventoryManager.Instance.IsSelectedItem == true)
+            {
+                if (Input.GetKey(KeyCode.LeftControl))
+                {
+                    this.StoreItem(InventoryManager.Instance.SelectedItem.Item);
+                    InventoryManager.Instance.RemoveItem();
+                }
+                else
+                {
+                    for (int i = 0; i < InventoryManager.Instance.SelectedItem.Amount; i++)
+                    {
+                        this.StoreItem(InventoryManager.Instance.SelectedItem.Item);
+                    }
+                    InventoryManager.Instance.RemoveItem(InventoryManager.Instance.SelectedItem.Amount);
+                }
+            }
+            else
+            {
+             return;   
             }
         }
     }
