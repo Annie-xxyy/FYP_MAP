@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "name": "HP_Potion",
+    "type": "Consumable",
+    "quality": "Normal",
+    "description": "Recovery 10 HP",
+    "capacity": 99,
+    "buyPrice": 10,
+    "sellPrice": 5,
+    "hp": 10,
+    "san": 1,
+    "sprite": "Sprites/Items/hp"
+  },
+  {
+    "id": 2,
+    "name": "SAN_Potion",
+    "type": "Consumable",
+    "quality": "Normal",
+    "description": "Recovery 10 HP",
+    "capacity": 99,
+    "buyPrice": 10,
+    "sellPrice": 5,
+    "hp": 0,
+    "san": 5,
+    "sprite": "Sprites/Items/mp"
+  },
+  {
+  "id": 3,
+  "name": "ChestARMOR",
+  "type": "Equipment",
+  "quality": "Rare",
+  "description": "This is a rare armor",
+  "capacity": 1,
+  "buyPrice": 100,
+  "sellPrice": 50,
+  "sprite": "Sprites/Items/armor",
+  "strength": 10,
+  "intelligence": 2,
+  "agility": 5,
+  "vitality": 10,
+  "equipType": "Chest"
+  },
+  {
+    "id": 4,
+    "name": "Axe",
+    "type": "Weapon",
+    "quality": "Legendary",
+    "description": "This is a Legendary axe",
+    "capacity": 1,
+    "buyPrice": 1000,
+    "sellPrice": 500,
+    "sprite": "Sprites/Items/axe",
+    "damage": 1000,
+    "weaponType": "MainHand"
+  },
+  {
+    "id": 5,
+    "name": "Book",
+    "type": "Material",
+    "quality": "Legendary",
+    "description": "This is a Legendary material",
+    "capacity": 99,
+    "buyPrice": 1000,
+    "sellPrice": 5000,
+    "sprite": "Sprites/Items/book"
+  },
+  {
+    "id": 6,
+    "name": "gem",
+    "type": "Material",
+    "quality": "Legendary",
+    "description": "This is a Legendary gem",
+    "capacity": 99,
+    "buyPrice": 1000,
+    "sellPrice": 5000,
+    "sprite": "Sprites/Items/gem"
+  }
+]

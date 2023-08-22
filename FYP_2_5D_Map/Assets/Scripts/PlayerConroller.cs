@@ -11,10 +11,15 @@ public class PlayerConroller : MonoBehaviour
     public Rigidbody rb;
     public SpriteRenderer sr;
 
+    private bool isOpenInventory = false;
+    private CanvasGroup _canvasGroupInventory;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        _canvasGroupInventory = GameObject.Find("KnapsackPanel").GetComponent<CanvasGroup>();
+        _canvasGroupInventory.alpha = 0;
     }
 
     // Update is called once per frame
@@ -45,6 +50,24 @@ public class PlayerConroller : MonoBehaviour
         else if (x != 0 && x > 0)
         {
             sr.flipX = false;
+        }
+        OpenInventory();
+    }
+
+    private void OpenInventory()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            isOpenInventory = !isOpenInventory;
+            if (isOpenInventory)
+            {
+                _canvasGroupInventory.alpha = 1;
+            }
+            else
+            {
+                _canvasGroupInventory.alpha = 0;
+            }
+
         }
     }
 }

@@ -118,6 +118,7 @@
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -326,6 +327,7 @@
 -r:"C:/Users/SLRU/Desktop/FYP/FYP_MAP/FYP_2_5D_Map/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Cinemachine.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/com.unity.cinemachine.editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/DOTween.Modules.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.EditorCoroutines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
@@ -355,10 +357,28 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
+"Assets/JSON/JSONObject.cs"
+"Assets/JSON/VectorTemplates.cs"
 "Assets/Scripts/FacingCamera.cs"
+"Assets/Scripts/Fade/tree/FadeINOUT.cs"
+"Assets/Scripts/Fade/tree/Fadesetting.cs"
+"Assets/Scripts/inventory/Inventory.cs"
+"Assets/Scripts/inventory/InventoryManager.cs"
+"Assets/Scripts/inventory/item/Consumable.cs"
+"Assets/Scripts/inventory/item/Equipment.cs"
+"Assets/Scripts/inventory/item/Item.cs"
+"Assets/Scripts/inventory/item/Material.cs"
+"Assets/Scripts/inventory/item/Weapon.cs"
+"Assets/Scripts/inventory/ItemUI.cs"
+"Assets/Scripts/inventory/Knapsack.cs"
+"Assets/Scripts/inventory/Slot.cs"
+"Assets/Scripts/inventory/test.cs"
+"Assets/Scripts/inventory/ToolTip.cs"
 "Assets/Scripts/PlayerConroller.cs"
 "Assets/Scripts/SpriteBillboard.cs"
 "Assets/Scripts/SpriteObject.cs"
+"Assets/Scripts/UI-PlayerStatus/Player.cs"
+"Assets/Scripts/UI-PlayerStatus/UISan.cs"
 -langversion:9.0
 
 /deterministic
