@@ -60,26 +60,12 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (isSelectedItem)
-        {
-            Vector2 postion;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(_canvas.transform as RectTransform,
-                Input.mousePosition, null, out postion);
-            selectedItem.SetLocalPosition(postion);
-        }
-        else if (isToolTipShow)
+        if (isToolTipShow)
         {
             Vector2 postion;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_canvas.transform as RectTransform,
                 Input.mousePosition, null, out postion);
             _toolTip.SetLocalPosition(postion+toolTipPositionOffSet);
-        }
-
-        if (isSelectedItem&&Input.GetMouseButtonDown(0)&&
-            UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1)==false)
-        {
-            isSelectedItem = false;
-            SelectedItem.Hide();
         }
     }
 
@@ -155,10 +141,6 @@ public class InventoryManager : MonoBehaviour
     
     public void ShowToolTip(string content)
     {
-        if (this.isSelectedItem)
-        {
-            return;
-        }
         isToolTipShow = true;
         _toolTip.Show(content);
     }
@@ -173,18 +155,6 @@ public class InventoryManager : MonoBehaviour
     {
         SelectedItem.SetItem(item,amount);
         isSelectedItem = true;
-        SelectedItem.Show();
-        this._toolTip.Hide();
-    }
-    
-    public void RemoveItem(int amount=1)
-    {
-        SelectedItem.ReduceAmount(amount);
-        if (SelectedItem.Amount<=0)
-        {
-            isSelectedItem = false;
-            SelectedItem.Hide();
-        }
     }
     
 }
